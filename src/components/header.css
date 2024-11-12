@@ -1,0 +1,88 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    background-color: #000000;
+    color: white;
+  }
+  
+  .logo {
+    margin: 0;
+  }
+  
+  .nav {
+    display: flex;
+    align-items: center;
+  }
+  
+  .link {
+    margin: 0 1rem;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .link:hover {
+    color: #FFD700;
+  }
+  
+  .order-button {
+    background-color: #FFD700;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+    margin-right: 30px
+  }
+  
+  .order-button:hover {
+    background-color: #FF6347;
+  }
+  
+  .nav .link:last-child {
+    cursor: pointer;
+  }
+  
+  .nav .link:last-child:hover {
+    color: #FFD700;
+  }
+/* Estilos para el carrito */
+.cart-container {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    
+  }
+  
+  .cart-container{
+    background-color: #000000;
+    color: #fdf3f3;
+    
+    
+  }
+  
+  .cart-count {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    font-size: 0.8rem;
+    border-radius: 50%;
+    padding: 3px 6px;
+    min-width: 20px;
+    text-align: center;
+  }
+  #carro{
+    position: relative;
+    margin-top: 5px;
+    background-color: #f8c007;
+    padding: 13px;
+    margin-right: 20px;
+    margin-left: auto;
+    font-size: larger;
+    border-color: #f8c007;
+    border-radius: 9px;
+    
+  }

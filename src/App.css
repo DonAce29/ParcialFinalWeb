@@ -1,42 +1,94 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* App.css */
+
+body, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Para asegurar que el header ocupe toda la parte superior */
+header {
+  width: 100%;
+  position: fixed; /* Esto hace que el header se mantenga siempre en la parte superior */
+  top: 0;
+  left: 0;
+  padding: 0; /* Sin padding adicional */
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black; /* Color de fondo negro */
+  color: white;
+  height: 60px; /* Ajusta la altura según tu preferencia */
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+header nav {
+  display: flex;
+  gap: 1rem;
+}
+
+header h1 {
+  margin: 0;
+  padding-left: 1rem; /* Puedes ajustar el padding interno según sea necesario */
+}
+
+header a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem;
+}
+
+header button {
+  background-color: yellow;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  margin-right: 1rem; /* Para separar un poco del borde derecho */
+}
+
+header a:hover, header button:hover {
+  opacity: 0.8;
+}
+
+
+.main-content {
+  display:flex;
+  justify-content: center;
+  padding: 1rem;
+  margin-bottom: 100px;
+}
+
+
+.menu {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 productos por fila */
+  gap: 20px;
+  justify-items: center; /* Centra las tarjetas dentro de cada celda */
+  padding: 1rem;
+}
+
+
+@media (max-width: 1200px) {
+  .menu {
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas para pantallas medianas */
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media (max-width: 900px) {
+  .menu {
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas para pantallas pequeñas */
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+@media (max-width: 600px) {
+  .menu {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas para pantallas muy pequeñas */
   }
 }
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+@media (max-width: 400px) {
+  .menu {
+    grid-template-columns: 1fr; /* 1 columna para pantallas ultra pequeñas */
+  }
 }

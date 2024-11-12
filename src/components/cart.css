@@ -1,0 +1,47 @@
+.cart-container {
+    padding: 1rem;
+    margin: 5px;
+    margin-top: 90px;
+    align-items: center;
+    text-align: center;
+    border: 2px solid black;
+    background-color: #e7e310;
+    color: #000000;
+    display: flex; /* Añadido: cambia el contenedor a flex */
+    flex-direction: column; /* Añadido: los items se alinearán verticalmente */
+  }
+  
+  .cart-item {
+    display: flex; 
+    flex-direction: row; /* Los elementos dentro de cada cart-item se alinean horizontalmente */
+    justify-content: space-between; /* Esto sigue funcionando para separar nombre, precio y botón */
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    
+  }
+  
+  .cart-item p {
+    margin: 0 5px; /* Esto agrega espacio entre el nombre y el precio */
+  }
+  
+  .remove-button {
+    background-color: #ff2600;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 3px;
+  }
+  
+  .remove-button:hover {
+    background-color: #8f1e0d;
+  }
+  
+  .Tit {
+    color: #e78a10;
+  }
+  

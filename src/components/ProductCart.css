@@ -1,0 +1,62 @@
+/* Para las tarjetas de los productos */
+.product-card {
+    width: 200px; /* Puedes ajustar este valor */
+    height: 350px; /* Mantener una altura fija */
+    display: flex;
+    flex-direction: column; /* Alinea los elementos de arriba hacia abajo */
+    justify-content: space-between; /* Distribuye el contenido uniformemente */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 10px;
+    background-color: white;
+    text-align: center; /* Centra el texto */
+  }
+  
+  /* Para las imágenes de los productos */
+  .product-card img {
+    width: 100%; /* Hace que la imagen ocupe todo el ancho del contenedor */
+    height: 150px; /* Fija una altura para las imágenes */
+    object-fit: cover; /* Mantiene la proporción de la imagen */
+    border-radius: 8px;
+    margin-bottom: 15px; /* Espacio entre la imagen y el texto */
+  }
+  
+  /* Para los nombres de los productos */
+  .product-card h3 {
+    font-size: 1.2rem;
+    margin: 0;
+    color: #333;
+  }
+  
+  /* Para la descripción del producto */
+  .product-card p {
+    font-size: 1rem;
+    color: #777;
+    margin: 0;
+    flex-grow: 1; /* Hace que la descripción ocupe el espacio disponible */
+  }
+  
+  /* Para el precio */
+  .product-card .price {
+    font-size: 1.2rem;
+    color: #333;
+    margin: 10px 0;
+  }
+  
+  /* Para el botón de agregar al carrito */
+  .product-card .add-to-cart {
+    background-color: #FF6347;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  .product-card .add-to-cart:hover {
+    background-color: #FFD700;
+  }
+  
