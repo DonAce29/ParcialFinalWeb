@@ -5,11 +5,17 @@ header {
     padding: 0.5rem;
     background-color: #000000;
     color: white;
-  }
   
-  .logo {
-    margin: 0;
-  }
+
+}
+
+.logo-image {
+  width: 70px; /* Ajusta según el tamaño necesario */
+  height: 70px;
+  margin-right: 10px;
+  border-radius: 50%; /* Opcional: si quieres que la imagen sea redonda */
+ 
+}
   
   .nav {
     display: flex;
@@ -36,7 +42,7 @@ header {
   }
   
   .order-button:hover {
-    background-color: #FF6347;
+    background-color: #eaff47;
   }
   
   .nav .link:last-child {
