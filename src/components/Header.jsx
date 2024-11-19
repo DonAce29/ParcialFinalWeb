@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Header.css';
+import 'Header.css';
 
 const Header = ({ onCartClick, cartCount }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
