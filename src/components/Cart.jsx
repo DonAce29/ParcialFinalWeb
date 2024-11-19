@@ -1,13 +1,16 @@
-// Cart.js
+
 import React from 'react';
 import './cart.css';
 
-const Cart = ({ cartItems, onRemove }) => {
+const Cart = ({ cartItems, onRemove, onClose }) => {
   return (
     <div className="cart-container">
+      {/* Botón de Cerrar */}
+      <button className="close-button" onClick={onClose}>Cerrar</button>
+
       <h2 className='Tit'>Carrito</h2>
       {cartItems.length === 0 ? (
-        <p> vacío </p>
+        <p>Carrito vacío</p>
       ) : (
         cartItems.map((item, index) => (
           <div key={index} className="cart-item">

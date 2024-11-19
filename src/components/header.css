@@ -1,23 +1,20 @@
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.5rem;
-    background-color: #000000;
-    color: rgb(249, 248, 248);
-   
-    
-  
-
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem; /* Espacio interno en los lados */
+  background-color: #000000;
+  color: rgb(249, 248, 248);
 }
+
 .logo {
   display: flex;
   align-items: center;
-  
 }
 
 #opitasFood {
-  margin-left: 10px; /* Espacio entre el logo y el texto */
+  margin-right: auto; /* Espacio entre el logo y el texto */
+  margin-left: 10px;
   font-size: 1.5rem;
   font-weight: bold;
   color: rgb(249, 248, 248); /* Asegura el color adecuado */
@@ -25,94 +22,139 @@ header {
 
 .logo-image {
   width: 70px; /* Tamaño del logo */
-  height: 70PX;
+  height: 70px; /* Ajuste de "PX" a "px" */
   margin-right: 10px; /* Reduce el margen si es necesario */
   border-radius: 50%; /* Para que sea redondo */
 }
 
-  
-  .nav {
-    display: flex;
-    align-items: center;
-  }
-  
-  .link {
-    margin: 0 1rem;
-    color: white;
-    text-decoration: none;
-  }
-  
-  .link:hover {
-    color: #FFD700;
-  }
-  
-  .order-button {
-    background-color: #FFD700;
-    border: none;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    color: rgb(0, 0, 0);
-    margin-right: 10%;
-  }
-  
-  .order-button:hover {
-    background-color: #eaff47;
-  }
-  
-  .nav .link:last-child {
-    cursor: pointer;
-  }
-  
-  .nav .link:last-child:hover {
-    color: #FFD700;
-  }
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Espacio uniforme entre los elementos de la navegación */
+}
+
+.link {
+  margin: 0;
+  color: white;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: #FFD700;
+}
+
+.order-button {
+  background-color: #FFD700;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  color: rgb(0, 0, 0);
+  margin-right: 10%;
+}
+
+.order-button:hover {
+  background-color: #eaff47;
+}
+
+.nav .link:last-child {
+  cursor: pointer;
+}
+
+.nav .link:last-child:hover {
+  color: #FFD700;
+}
+
 /* Estilos para el carrito */
 .cart-container {
-    position: relative;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.cart-container {
+  background-color: #000000;
+  color: #fdf3f3;
+}
+
+.cart-count {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background-color: red;
+  color: white;
+  font-size: 0.8rem;
+  border-radius: 50%;
+  padding: 3px 6px;
+  min-width: 20px;
+  text-align: center;
+}
+
+#carro {
+  position: relative;
+  margin-top: 5px;
+  background-color: #f8c007;
+  padding: 13px;
+  margin-right: 35px;
+  margin-left: auto;
+  font-size: larger;
+  border-color: #f8c007;
+  border-radius: 9px;
+}
+
+/* Botón de menú hamburguesa */
+.menu-hamburguesa {
+  display: none; /* Oculto por defecto */
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* Cambios en pantallas pequeñas */
+@media (max-width: 600px) {
+  #opitasFood {
+    visibility: hidden;
   }
-  
-  .cart-container{
-    background-color: #000000;
-    color: #fdf3f3;
-    
-    
-    
-  }
-  
-  .cart-count {
-    position: absolute;
-    top: -5px;
-    right: -10px;
-    background-color: red;
-    color: white;
-    font-size: 0.8rem;
-    border-radius: 50%;
-    padding: 3px 6px;
-    min-width: 20px;
+
+  #carro {
+    margin: 0; /* Resetea los márgenes */
+    padding: 10px 20px; /* Ajusta el tamaño del botón */
     text-align: center;
-  }
-  #carro{
-    position: relative;
-    margin-top: 5px;
+    font-size: 1.2rem; /* Asegura que el texto sea visible */
+    width: auto; /* No ocupa el 100% del ancho */
+    display: flex; 
+    justify-content: center; 
+    align-items: center; /* Centrado del contenido */
     background-color: #f8c007;
-    padding: 13px;
-    margin-right: 15%;
-    margin-left: auto;
-    font-size: larger;
-    border-color: #f8c007;
-    border-radius: 9px;
-    
+    border-radius: 10px; /* Mantén el diseño visual */
   }
 
-  @media(max-width:600px){
-    #opitasFood{
-      visibility: hidden;
-
-    }
-
-   
+  .nav {
+    display: none; /* Oculto por defecto */
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #000000;
+    z-index: 1000;
+    padding: 1rem 0;
   }
+
+  .nav.active {
+    display: flex; /* Visible cuando está activo */
+  }
+
+  .link {
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    border-bottom: 1px solid #FFD700;
+  }
+
+  .menu-hamburguesa {
+    display: block; /* Visible en pantallas pequeñas */
+  }
+}

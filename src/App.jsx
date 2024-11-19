@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 const App = () => {
   const [cart, setCart] = useState([]);
   const [isCartVisible, setIsCartVisible] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);  // Estado para controlar el menú hamburguesa
 
   const addToCart = (product) => {
     setCart([...cart, product]);
@@ -30,9 +31,29 @@ const App = () => {
     { name: 'Jugos', description: 'Naturales y en leche', price: 3000, image: 'https://dayamineral.pe/wp-content/uploads/2020/08/4_1070-3.jpg' },
   ];
 
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);  // Cambia el estado del menú hamburguesa
+  };
+
+  const toggleCart = () => {
+    setIsCartVisible(!isCartVisible);
+    if (isMenuOpen) {  // Si el menú hamburguesa está abierto, lo cerramos
+      setIsMenuOpen(false);
+    }
+  };
+
+  const closeCart = () => {
+    setIsCartVisible(false);  // Cierra el carrito
+  };
+
   return (
     <div>
-      <Header onCartClick={() => setIsCartVisible(!isCartVisible)} cartCount={cart.length} />
+      <Header 
+        onCartClick={toggleCart} 
+        cartCount={cart.length} 
+        onMenuToggle={toggleMenu} 
+        isMenuOpen={isMenuOpen} 
+      />
       <main className="main-content">
         <section>
           <h2>Menú</h2>
@@ -49,9 +70,9 @@ const App = () => {
             ))}
           </div>
         </section>
-        {isCartVisible && ( // Muestra el carrito solo si es visible
+        {isCartVisible && (
           <aside>
-            <Cart cartItems={cart} onRemove={removeFromCart} />
+            <Cart cartItems={cart} onRemove={removeFromCart} onClose={closeCart} />
           </aside>
         )}
       </main>
@@ -60,4 +81,4 @@ const App = () => {
   );
 };
 
-export default App
+export default App;

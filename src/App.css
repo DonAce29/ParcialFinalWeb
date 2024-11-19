@@ -1,26 +1,22 @@
-/* App.css */
-
 body, html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
 }
 
-/* Para asegurar que el header ocupe toda la parte superior */
 header {
   width: 100%;
-  position: fixed; /* Esto hace que el header se mantenga siempre en la parte superior */
+  position: fixed;
   top: 0;
   left: 0;
-  padding: 0; /* Sin padding adicional */
+  padding: 0;
   z-index: 1000;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: black; /* Color de fondo negro */
+  background-color: black;
   color: white;
-  height: 60px; /* Ajusta la altura según tu preferencia */
+  height: 60px;
 }
 
 header nav {
@@ -30,7 +26,7 @@ header nav {
 
 header h1 {
   margin: 0;
-  padding-left: 1rem; /* Puedes ajustar el padding interno según sea necesario */
+  padding-left: 1rem;
 }
 
 header a {
@@ -44,51 +40,100 @@ header button {
   border: none;
   padding: 0.5rem 1rem;
   cursor: pointer;
-  margin-right: 1rem; /* Para separar un poco del borde derecho */
+  margin-right: 1rem;
 }
 
 header a:hover, header button:hover {
   opacity: 0.8;
 }
 
-
 .main-content {
-  display:flex;
-  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 1rem;
-  margin-bottom: 100px;
+  margin-top: 100px; /* Evita que el contenido quede debajo del header */
 }
-
 
 .menu {
   display: grid;
-  grid-template-columns: repeat(5, 1fr); /* 5 productos por fila */
+  grid-template-columns: repeat(5, 1fr);
   gap: 20px;
-  justify-items: center; /* Centra las tarjetas dentro de cada celda */
+  justify-items: center;
   padding: 1rem;
 }
 
-
 @media (max-width: 1200px) {
   .menu {
-    grid-template-columns: repeat(4, 1fr); /* 4 columnas para pantallas medianas */
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
 @media (max-width: 900px) {
   .menu {
-    grid-template-columns: repeat(3, 1fr); /* 3 columnas para pantallas pequeñas */
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media (max-width: 600px) {
   .menu {
-    grid-template-columns: repeat(2, 1fr); /* 2 columnas para pantallas muy pequeñas */
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 400px) {
   .menu {
-    grid-template-columns: 1fr; /* 1 columna para pantallas ultra pequeñas */
+    grid-template-columns: 1fr;
   }
+}
+
+aside {
+  position: fixed;
+  top: 60px;
+  right: 0;
+  width: 300px;
+  background-color: #fff9c4; /* Fondo amarillo claro */
+  border-left: 2px solid #ddd;
+  height: calc(100% - 60px);
+  overflow-y: auto;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+aside h2 {
+  padding: 1rem;
+  background-color: transparent;
+  color: white;
+  margin: 0;
+}
+
+aside ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+aside li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #ddd;
+}
+
+aside li span {
+  font-weight: bold;
+}
+
+aside li button {
+  margin-left: 10px; /* Espacio entre el texto y el botón */
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+aside li button:hover {
+  opacity: 0.8;
 }
