@@ -36,7 +36,7 @@ const Header = ({ onCartClick, cartCount }) => {
         <a href="#contacto" className="link">
           Contacto
         </a>
-        <a href="#ubicaciones" className="link">
+        <a href="https://maps.app.goo.gl/eKrMEGfE34Q6jGf97" className="link">
           Ubicación
         </a>
         <a
