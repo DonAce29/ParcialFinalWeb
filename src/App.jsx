@@ -10,6 +10,12 @@ const App = () => {
   const [isCartVisible, setIsCartVisible] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);  // Estado para controlar el menú hamburguesa
 
+  const handleOrder = () => {
+    alert(`¡Pedido realizado! Total: $${cart.reduce((acc, item) => acc + item.price, 0).toFixed(2)}`);
+    setCart([]); // Vacía el carrito
+    setIsCartVisible(false); // Cierra el carrito
+  };
+
   const addToCart = (product) => {
     setCart([...cart, product]);
   };
@@ -48,11 +54,11 @@ const App = () => {
 
   return (
     <div>
-      <Header 
-        onCartClick={toggleCart} 
-        cartCount={cart.length} 
-        onMenuToggle={toggleMenu} 
-        isMenuOpen={isMenuOpen} 
+      <Header
+        onCartClick={toggleCart}
+        cartCount={cart.length}
+        onMenuToggle={toggleMenu}
+        isMenuOpen={isMenuOpen}
       />
       <main className="main-content">
         <section>
@@ -72,13 +78,17 @@ const App = () => {
         </section>
         {isCartVisible && (
           <aside>
-            <Cart cartItems={cart} onRemove={removeFromCart} onClose={closeCart} />
+            <Cart
+              cartItems={cart}
+              onRemove={removeFromCart}
+              onClose={closeCart}
+              onOrder={handleOrder} // Pasar la función handleOrder
+            />
           </aside>
         )}
       </main>
       <Footer />
     </div>
   );
-};
-
+}
 export default App;

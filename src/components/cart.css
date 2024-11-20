@@ -61,4 +61,25 @@
   .close-button:hover {
     background-color: rgb(243, 117, 117);
   }
+  .order-button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 0.7rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 1rem;
+    width: 100%; /* Ocupa todo el ancho */
+    text-align: center;
+  }
+  
+  .order-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .order-button:hover:not(:disabled) {
+    background-color: #45a049;
+  }
   

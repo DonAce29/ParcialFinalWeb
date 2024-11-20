@@ -1,7 +1,7 @@
 import React from 'react';
 import './cart.css';
 
-const Cart = ({ cartItems, onRemove, onClose }) => {
+const Cart = ({ cartItems, onRemove, onClose, onOrder }) => {
   const totalPrice = cartItems.reduce((acc, item) => acc + item.price, 0);
 
   return (
@@ -28,10 +28,19 @@ const Cart = ({ cartItems, onRemove, onClose }) => {
               </button>
             </div>
           ))}
-          {/* Muestra el total */}
+          {/* Total */}
           <div className="cart-total">
             <h3>Total: ${totalPrice.toFixed(2)}</h3>
           </div>
+
+          {/* Botón de Pedir */}
+          <button
+            onClick={onOrder}
+            className="order-button"
+            disabled={cartItems.length === 0} // Desactiva si el carrito está vacío
+          >
+            Pedir
+          </button>
         </>
       )}
     </div>
